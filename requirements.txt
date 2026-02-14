@@ -1,0 +1,9 @@
+# Project Dependencies
+
+# Marker - PDF processing tool
+# Install from PyPI
+marker-pdf==1.10.2
+
+# PyMuPDF - PDF analysis tool
+# Used for analyzing image types in PDF files
+PyMuPDF==1.27.1

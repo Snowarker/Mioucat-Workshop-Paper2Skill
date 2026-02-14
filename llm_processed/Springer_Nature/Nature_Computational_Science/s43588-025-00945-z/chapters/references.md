@@ -1,0 +1,24 @@
+# References
+
+- 1. Stubbington, M. J. T., Rozenblatt-Rosen, O., Regev, A. & Teichmann, S. A. Single-cell transcriptomics to explore the immune system in health and disease. *Science* **358**, 58–63 (2017).
+- 2. Regev, A. et al. Science forum: the Human Cell Atlas. *eLife* **6**, e27041 (2017).
+- 3. Abdulla, S. et al. CZ CELLxGENE Discover: a single-cell data platform for scalable exploration, analysis and modeling of aggregated data. *Nucleic Acids Res.* **53**, D886–D900 (2024).
+- 4. Abdelaal, T. et al. A comparison of automatic cell identification methods for single-cell RNA sequencing data. *Genome Biol.* **20**, 194 (2019).
+- 5. Pasquini, G., Arias, J. E. R., Schäfer, P. & Busskamp, V. Automated methods for cell type annotation on scRNA-seq data. *Comput. Struct. Biotechnol. J.* **19**, 961–969 (2021).
+- 6. Conde, C. D. et al. Cross-tissue immune cell analysis reveals tissue-specific features in humans. *Science* **376**, eabl5197 (2022).
+- 7. Ergen, C. et al. Consensus prediction of cell type labels in single-cell data with popV. *Nat. Genet.* **56**, 2731–2738 (2024).
+- 8. Huang, Y. & Zhang, P. Evaluation of machine learning approaches for cell-type identification from single-cell transcriptomics data. *Brief. Bioinform.* **22**, bbab035 (2021).
+- 9. Osumi-Sutherland, D. et al. Cell type ontologies of the Human Cell Atlas. *Nat. Cell Biol.* **23**, 1129–1135 (2021).
+- 10. Jupp, S., Burdett, T., Leroy, C. & Parkinson, H. E. A new ontology lookup service at EMBL-EBI. In *Proc. 8th International Conference on Semantic Web Applications and Tools for Life Sciences* Vol. 1546 (eds Malone, J. et al.) 118–119 (CEUR-WS.org, 2015).
+- 11. Fischer, F. et al. scTab: scaling cross-tissue single-cell annotation models. *Nat. Commun.* **15**, 6611 (2024).
+- 12. Wang, S. et al. Leveraging the cell ontology to classify unseen cell types. *Nat. Commun.* **12**, 5556 (2021).
+- 13. Bernstein, M. N., Ma, Z., Gleicher, M. & Dewey, C. N. CellO: comprehensive and hierarchical cell type classification of human cells with the Cell Ontology. *iScience* **24**, 101913 (2019).
+- 14. Lopez, R., Regier, J., Cole, M., Jordan, M. I. & Yosef, N. Deep generative modeling for single-cell transcriptomics. *Nat. Methods* **15**, 1053–1058 (2018).
+- 15. Wang, W. et al. scBERT as a large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data. *Nat. Mach. Intell.* **4**, 852–866 (2022).
+- 16. Chen, J. et al. Transformer for one stop interpretable cell type annotation. *Nat. Commun.* **14**, 223 (2023).
+- 17. Xu, J., Zhang, A., Liu, F., Chen, L. & Zhang, X. CIForm as a Transformer-based model for cell-type annotation of largescale single-cell RNA-seq data. *Brief. Bioinform.* **24**, bbad195 (2023).
+- 18. Arik, S. & Pfister, T. TabNet: attentive interpretable tabular learning. In *Proc. AAAI Conference on Artificial Intelligence* Vol. 35 (eds Leyton-Brown, K. & Mausam) 6679–6687 (AAAI, 2021).
+- 19. Heimberg, G. et al. A cell atlas foundation model for scalable search of similar human cells. *Nature* **638**, 1085–1094 (2024).
+- 20. Theodoris, C. V. et al. Transfer learning enables predictions in network biology. *Nature* **618**, 616–624 (2023).
+- 21. Cui, H. et al. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. *Nat. Methods* **21**, 1470–1480 (2024).
+- 22. Kedzierska, K. Z., Crawford, L., Amini, A. P. & Lu, A. X. Zero-shot evaluation reveals limitations of single-cell foundation models. *Genome Biol.* **26**, 101 (2025).
