@@ -4,8 +4,6 @@
 
 本项目是 MiouCat Workshop 体系中的一个衍生模块，专注于科研文献和专利的处理流程，包括 PDF 文档的文字和图片提取，以及将提取的内容转换为规范化的 Markdown 文档。
 
-**联系邮箱**：snowaker@zhuyintech.cn
-
 ## 工作流程
 
 本项目的完整工作流程分为三个主要部分：
@@ -130,6 +128,6 @@
 
 ### 咪噢喵
 
-![公众号二维码](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=QR%20code%20for%20WeChat%20public%20account%20named%20%E5%92%AA%E5%98%9F%E5%96%B5%20(MiouCat)%2C%20with%20a%20small%20logo%20of%20a%20cat%20in%20the%20center%2C%20black%20and%20white%20QR%20code%20on%20white%20background%2C%20professional%20looking&image_size=square)
+![公众号二维码](images/wechat_qrcode.png)
 
 扫描上方二维码关注 "咪噢喵" 公众号，获取项目最新动态、技术分享和更多科研工具。
