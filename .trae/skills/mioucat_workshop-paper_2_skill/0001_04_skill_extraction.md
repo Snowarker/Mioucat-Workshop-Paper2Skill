@@ -1,270 +1,229 @@
 # Skill 提取
 
-## 1. 准备工作
+## 概述
 
-### 1.1 激活虚拟环境
+Skill 提取是 Paper2Skill 工具的核心功能，负责从 LLM 处理后的文档中提取结构化的技能知识，生成规范化的技能文档。本指南将详细介绍 Skill 提取的操作步骤和参数配置。
 
-确保在执行任何操作前，虚拟环境已激活：
+## 提取原理
 
-```powershell
-# 激活虚拟环境
-venv\Scripts\activate
-```
+Paper2Skill 工具使用专门的提取算法，从处理后的文档中识别和提取技能相关的信息，主要包括以下功能：
 
-### 1.2 准备处理后的文档
+- **技能识别**：识别文档中与技能相关的内容
+- **信息结构化**：将提取的信息组织成结构化格式
+- **关系构建**：构建技能之间的层次和关联关系
+- **文档生成**：生成规范化的技能文档
 
-确保 LLM 处理后的文档已准备就绪：
+## 技能分类
 
-```powershell
-# 查看 LLM 处理后的文档
-Get-ChildItem -Path "llm_processed" -Recurse
-```
+Paper2Skill 工具提取的技能主要分为以下几类：
 
-## 2. Skill 提取流程
+| 技能类型 | 描述 | 示例 |
+|---------|------|------|
+| 技术技能 | 具体的技术能力和方法 | 机器学习、数据分析、编程 |
+| 方法技能 | 研究方法和方法论 | 实验设计、统计分析、文献综述 |
+| 领域知识 | 特定领域的专业知识 | 人工智能、生物信息学、金融学 |
+| 工具技能 | 特定工具和软件的使用 | Python、TensorFlow、Excel |
+| 软技能 | 非技术性的能力 | 批判性思维、问题解决、团队协作 |
 
-### 2.1 提取关键知识点
+## 准备工作
 
-从处理后的 Markdown 文档中提取关键知识点和技能点：
+### 1. 环境配置
 
-1. **研究背景**：提取研究的背景和动机
-2. **研究问题**：提取研究解决的核心问题
-3. **研究方法**：提取研究使用的方法和技术
-4. **实验设计**：提取实验设计和流程
-5. **关键发现**：提取研究的主要发现和结果
-6. **创新点**：提取研究的创新之处
-7. **技术应用**：提取技术的应用场景和潜力
-8. **局限性**：提取研究的局限性
-9. **未来方向**：提取研究建议的未来研究方向
+- **依赖项检查**：确保所有必要的依赖项都已安装
+- **输入文件准备**：准备好 LLM 处理后的文档
+- **输出目录创建**：创建存储提取结果的目录
 
-### 2.2 按不同角度提取
-
-#### 2.2.1 按研究主题提取
-
-- 识别论文的主要研究主题
-- 提取与主题相关的所有知识点
-- 组织成主题相关的 skill 集合
-
-#### 2.2.2 按研究方法提取
-
-- 识别论文使用的主要研究方法
-- 提取方法的原理、步骤和应用
-- 组织成方法相关的 skill 集合
-
-#### 2.2.3 按技术应用提取
-
-- 识别论文中涉及的技术和应用
-- 提取技术的原理、实现和应用场景
-- 组织成技术相关的 skill 集合
-
-#### 2.2.4 按期刊分类提取
-
-- 根据论文发表的期刊特点
-- 提取符合期刊风格和要求的知识点
-- 组织成期刊相关的 skill 集合
-
-## 3. Skill 组织
-
-### 3.1 创建 paper_skills 目录
+### 2. 创建目录结构
 
 ```powershell
-# 创建 paper_skills 目录
+# Windows
 New-Item -ItemType Directory -Path "paper_skills" -Force
-```
-
-### 3.2 按分类方式组织
-
-#### 3.2.1 按主题分类
-
-```powershell
-# 创建主题分类目录
 New-Item -ItemType Directory -Path "paper_skills\by_topic" -Force
-
-# 创建具体主题目录
-New-Item -ItemType Directory -Path "paper_skills\by_topic\single_cell_analysis" -Force
-```
-
-#### 3.2.2 按方法分类
-
-```powershell
-# 创建方法分类目录
 New-Item -ItemType Directory -Path "paper_skills\by_method" -Force
-
-# 创建具体方法目录
-New-Item -ItemType Directory -Path "paper_skills\by_method\machine_learning" -Force
-```
-
-#### 3.2.3 按期刊分类
-
-```powershell
-# 创建期刊分类目录
 New-Item -ItemType Directory -Path "paper_skills\by_journal" -Force
 
-# 创建具体期刊目录
-New-Item -ItemType Directory -Path "paper_skills\by_journal\Nature" -Force
+# WSL
+mkdir -p paper_skills/by_topic paper_skills/by_method paper_skills/by_journal
 ```
 
-### 3.3 Skill 文档结构
+## 提取操作
 
-每个 skill 文档应包含以下结构：
-
-```markdown
-# [Skill 标题]
-
-## 1. 概述
-
-[Skill 的简要介绍和目的]
-
-## 2. 核心内容
-
-[Skill 的详细内容]
-
-## 3. 应用场景
-
-[Skill 的应用场景和示例]
-
-## 4. 相关技能
-
-[与本 Skill 相关的其他技能]
-
-## 5. 参考文献
-
-[参考的原始论文]
-```
-
-## 4. 提取结果存储
-
-### 4.1 结果结构
-
-提取后的 skill 存储结构示例：
-
-```
-paper_skills/
-├── by_topic/
-│   └── single_cell_analysis/
-│       ├── topic_overview.md
-│       └── paper_1_skill.md
-├── by_method/
-│   └── machine_learning/
-│       ├── method_overview.md
-│       └── paper_1_skill.md
-└── by_journal/
-    └── Nature/
-        ├── journal_overview.md
-        └── paper_1_skill.md
-```
-
-### 4.2 总领性文件
-
-为每个分类创建总领性文件，提供该分类的概述和索引：
+### 基本提取命令
 
 ```powershell
-# 创建主题总领性文件
-New-Item -ItemType File -Path "paper_skills\by_topic\single_cell_analysis\topic_overview.md" -Force
+# Windows - 基本提取
+python -m paper2skill.skill_extract --input "llm_processed/sample_paper_processed.md" --output "paper_skills/sample_paper_skill.md"
+
+# WSL - 基本提取
+python3 -m paper2skill.skill_extract --input "llm_processed/sample_paper_processed.md" --output "paper_skills/sample_paper_skill.md"
 ```
 
-## 5. 质量检查
+### 分类提取
 
-### 5.1 检查提取完整性
-
-- 确保所有关键知识点都已提取
-- 检查是否有遗漏的重要内容
-- 确保提取的内容准确反映原始论文
-
-### 5.2 检查组织合理性
-
-- 确保 skill 组织逻辑清晰
-- 检查分类方式是否合理
-- 确保文档结构一致
-
-### 5.3 检查引用正确性
-
-- 确保 skill 文档正确引用原始论文
-- 检查引用格式是否规范
-- 确保引用链接可访问
-
-## 6. 常见问题
-
-### 6.1 提取不完整
-
-**问题**：Skill 提取不完整
-
-**解决方案**：
 ```powershell
-# 重新阅读原始论文
-# 确保理解论文的全部内容
+# Windows - 按主题分类
+python -m paper2skill.skill_extract --input "llm_processed/sample_paper_processed.md" --output "paper_skills/by_topic/machine_learning/sample_paper_skill.md" --category "machine_learning"
 
-# 使用结构化模板
-# 按照模板逐一提取每个部分
-
-# 多人审核
-# 由多人分别提取，然后合并结果
+# WSL - 按方法分类
+python3 -m paper2skill.skill_extract --input "llm_processed/sample_paper_processed.md" --output "paper_skills/by_method/deep_learning/sample_paper_skill.md" --category "deep_learning" --classify-by "method"
 ```
 
-### 6.2 组织不合理
+### 批量提取
 
-**问题**：Skill 组织不合理
-
-**解决方案**：
 ```powershell
-# 重新评估分类方式
-# 选择更适合的分类标准
+# Windows
+$processedFiles = Get-ChildItem -Path "llm_processed" -Filter "*_processed.md"
+foreach ($file in $processedFiles) {
+    $outputFile = Join-Path "paper_skills" "$($file.BaseName.Replace('_processed', ''))_skill.md"
+    Write-Host "Extracting skills from $($file.Name) to $outputFile"
+    python -m paper2skill.skill_extract --input $file.FullName --output $outputFile
+}
 
-# 调整目录结构
-# 根据实际情况调整目录结构
-
-# 参考其他论文的组织方式
-# 参考已有的组织良好的 skill 文档
+# WSL
+for file in llm_processed/*_processed.md; do
+    output="paper_skills/$(basename "$file" _processed.md)_skill.md"
+    echo "Extracting skills from $file to $output"
+    python3 -m paper2skill.skill_extract --input "$file" --output "$output"
+done
 ```
 
-### 6.3 质量不一致
+## 提取参数
 
-**问题**：不同论文的 skill 质量不一致
+### 常用参数
 
-**解决方案**：
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--input` | 输入文件路径 | 无（必需） |
+| `--output` | 输出文件路径 | 无（必需） |
+| `--category` | 技能分类 | 无 |
+| `--classify-by` | 分类方式 | `topic` |
+| `--min-confidence` | 最小置信度 | 0.7 |
+
+### 高级参数
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--skill-types` | 技能类型过滤 | 所有类型 |
+| `--max-skills` | 最大技能数量 | 50 |
+| `--include-context` | 是否包含上下文 | `False` |
+| `--verbose` | 是否显示详细信息 | `False` |
+
+## 提取结果检查
+
+### 检查提取质量
+
+1. **打开输出文件**：
+   - 打开生成的技能文档
+   - 检查提取的技能是否完整
+   - 检查技能分类是否准确
+
+2. **常见问题检查**：
+   - **技能遗漏**：检查是否有重要技能未提取
+   - **分类错误**：检查技能分类是否正确
+   - **冗余技能**：检查是否有重复或冗余的技能
+
+### 结果结构
+
+提取生成的技能文档通常包含以下部分：
+
+- **技能概览**：提取的技能总数和分类统计
+- **核心技能**：按重要性排序的核心技能列表
+- **详细技能**：包含详细描述的技能列表
+- **技能关系**：技能之间的层次和关联关系
+- **应用场景**：技能的具体应用场景
+
+## 最佳实践
+
+### 1. 提取设置
+
+- **参数调整**：根据文档类型调整提取参数
+- **分类策略**：选择合适的分类方式
+- **质量控制**：设置适当的置信度阈值
+
+### 2. 结果优化
+
+- **人工审核**：对提取结果进行必要的人工审核
+- **技能合并**：合并相似或相关的技能
+- **层次调整**：调整技能之间的层次关系
+
+### 3. 文档管理
+
+- **命名规范**：建立统一的文件命名规范
+- **分类存储**：按照分类存储技能文档
+- **索引创建**：为技能文档创建索引
+
+## 故障排除
+
+### 常见问题
+
+| 问题 | 原因 | 解决方案 |
+|------|------|----------|
+| 提取结果为空 | 输入文件格式错误 | 检查输入文件格式 |
+| 技能提取少 | 置信度阈值过高 | 降低最小置信度参数 |
+| 技能重复 | 分类策略不当 | 调整分类参数或手动合并 |
+| 处理速度慢 | 文档过大 | 分割文档或增加系统资源 |
+
+### 错误信息处理
+
+| 错误信息 | 含义 | 解决方案 |
+|----------|------|----------|
+| `Input file not found` | 输入文件不存在 | 检查文件路径 |
+| `Output directory not found` | 输出目录不存在 | 创建相应目录 |
+| `Invalid skill type` | 技能类型无效 | 检查技能类型参数 |
+| `Memory error` | 内存不足 | 减少批量大小或增加内存 |
+
+## 后续步骤
+
+Skill 提取完成后，您可以进行以下操作：
+
+1. **检查提取结果**：确保提取的技能质量满足要求
+2. **组织技能文档**：按照分类组织技能文档
+3. **创建技能索引**：为提取的技能创建索引
+4. **应用技能知识**：将提取的技能知识应用到实际场景
+
+## 示例
+
+### 示例 1: 基本提取
+
 ```powershell
-# 制定提取标准
-# 创建统一的提取标准和模板
+# 基本技能提取
+python -m paper2skill.skill_extract --input "llm_processed/attention_is_all_you_need_processed.md" --output "paper_skills/attention_is_all_you_need_skill.md"
 
-# 培训提取人员
-# 确保提取人员理解标准和要求
-
-# 定期审核
-# 定期审核提取结果，确保质量一致
+# 检查结果
+Get-Content "paper_skills/attention_is_all_you_need_skill.md" | Select-Object -First 50
 ```
 
-## 7. 性能优化
+### 示例 2: 按主题分类提取
 
-### 7.1 批量提取
+```powershell
+# 创建主题目录
+New-Item -ItemType Directory -Path "paper_skills\by_topic\natural_language_processing" -Force
 
-对于多个文档，可以批量进行 Skill 提取，提高效率。
+# 按主题分类提取
+python -m paper2skill.skill_extract --input "llm_processed/attention_is_all_you_need_processed.md" --output "paper_skills/by_topic/natural_language_processing/attention_is_all_you_need_skill.md" --category "natural_language_processing"
 
-### 7.2 模板化提取
+Write-Host "Skill extraction completed!"
+```
 
-创建标准化的提取模板，提高提取速度和一致性。
+### 示例 3: 批量提取并分类
 
-### 7.3 自动化辅助
+```powershell
+# 批量提取多个文档
+$processedFiles = Get-ChildItem -Path "llm_processed" -Filter "*_processed.md"
+foreach ($file in $processedFiles) {
+    # 提取文件名中的主题信息
+    $fileName = $file.BaseName
+    $topic = $fileName -split "_" | Select-Object -First 1
+    
+    # 创建主题目录
+    $topicDir = Join-Path "paper_skills\by_topic" $topic
+    New-Item -ItemType Directory -Path $topicDir -Force
+    
+    # 提取技能
+    $outputFile = Join-Path $topicDir "$($file.BaseName.Replace('_processed', ''))_skill.md"
+    Write-Host "Extracting skills from $($file.Name) to $outputFile"
+    python -m paper2skill.skill_extract --input $file.FullName --output $outputFile --category $topic
+}
 
-开发自动化工具辅助提取过程，减少手动工作。
-
-## 8. 后续步骤
-
-Skill 提取和组织完成后，可以：
-
-1. **技能关联**：建立不同技能之间的关联
-2. **技能评估**：评估技能的重要性和实用性
-3. **技能更新**：定期更新技能内容，保持时效性
-4. **技能应用**：将技能应用到实际问题中
-
-## 9. 预留扩展
-
-### 9.1 技能图谱
-
-未来可以开发技能图谱，展示技能之间的关系和层次结构。
-
-### 9.2 技能推荐
-
-可以开发技能推荐系统，根据用户需求推荐相关技能。
-
-### 9.3 技能评估
-
-可以开发技能评估体系，评估技能的质量和实用性。
+Write-Host "Batch skill extraction completed!"
+```

@@ -1,70 +1,92 @@
 ---
-name: "MiouCat_Workshop-Paper_2_Skill"
-description: "介绍 Paper2Skill 工具的使用方法，包括从 PDF 转换为 Markdown、LLM 处理、skill 提炼和代码工具管理的完整流程。"
+name: MiouCat_Workshop-Paper_2_Skill
+description: 专门为 Paper2Skill 工具的最终用户提供使用指南，包括环境设置、PDF 转换、LLM 处理和 Skill 提取等核心功能的详细操作步骤。
 ---
 
-# Paper2Skill 工具指南
+# Paper2Skill 工具用户指南
 
-## 1. 概述
+## 欢迎使用 Paper2Skill 工具
 
-Paper2Skill 是一个专门用于从学术论文中提取和组织知识技能（skill）的工具套件，通过标准化流程将原始 PDF 文档转换为结构化的知识体系。
+Paper2Skill 是一个基于大语言模型的多源信息抽取工具集，专注于从科研文献、专利、GitHub 仓库和网络文章中抽取关键信息，生成规范化的 Markdown 文档。本指南将帮助您快速上手并充分利用该工具的各项功能。
 
-## 2. 文档结构
+## 核心功能
 
-```
-MiouCat_Workshop-Paper_2_Skill/
-├── SKILL.md                  # 主入口文档
-├── 0001_usage_guide.md       # 工具使用指南（概述）
-├── 0001_01_environment_setup.md  # 环境设置
-├── 0001_02_pdf_conversion.md     # PDF 转换
-├── 0001_03_llm_processing.md     # LLM 处理（概述）
-├── 0001_03_01_basic_processing.md    # 基础规范化处理
-├── 0001_03_02_publisher_guidelines.md # 出版社处理指南
-├── 0001_03_02_01_springer_nature.md  # Springer Nature 处理指南
-├── 0001_03_03_journal_guidelines.md  # 期刊处理指南
-├── 0001_03_03_01_nature_computational_science.md # Nature Computational Science 处理指南
-├── 0001_04_skill_extraction.md   # Skill 提取
-├── 0002_skill_creation_guide.md  # Skill 创建指南
-├── 0002_01_logical_structure.md   # 逻辑层级结构
-└── 0002_02_document_length.md     # 文档长度规范
-```
+- **PDF 文档转换**：将 PDF 格式的论文和专利转换为可编辑的文本格式
+- **HTML 网页处理**：处理本地保存的 HTML 网页文件，如微信公众号文章
+- **GitHub 仓库处理**：克隆 GitHub 仓库并为大模型分析准备结构化内容
+- **网络文章处理**：爬取和处理微信公众号、小红书等网络文章
+- **大语言模型处理**：利用先进的 LLM 技术深度分析和理解文档内容
+- **Skill 信息提取**：从处理后的内容中提取结构化的技能知识
+- **Markdown 文档生成**：生成规范化、易读的 Markdown 文档
+- **目录结构管理**：提供清晰的目录结构，便于内容组织和访问
 
-## 3. 内容导航
+## 文档结构
 
-### 3.1 工具使用指南
-- `0001_usage_guide.md` - 工具使用指南（概述）
-  - `0001_01_environment_setup.md` - 环境设置
-  - `0001_02_pdf_conversion.md` - PDF 转换
-  - `0001_03_llm_processing.md` - LLM 处理（概述）
-    - `0001_03_01_basic_processing.md` - 基础规范化处理
-    - `0001_03_02_publisher_guidelines.md` - 出版社处理指南
-      - `0001_03_02_01_springer_nature.md` - Springer Nature 处理指南
-    - `0001_03_03_journal_guidelines.md` - 期刊处理指南
-      - `0001_03_03_01_nature_computational_science.md` - Nature Computational Science 处理指南
-  - `0001_04_skill_extraction.md` - Skill 提取
+### 📚 使用指南
+- [工具使用指南](0001_usage_guide.md)：工具使用方法概述
+  - [环境设置](0001_01_environment_setup.md)：详细的环境配置步骤
+  - [PDF 转换](0001_02_pdf_conversion.md)：PDF 文档转换操作指南
+  - [HTML 处理](0001_07_html_processing.md)：HTML 网页文件处理指南
+  - [GitHub 仓库处理](0001_05_github_processing.md)：GitHub 仓库处理指南
+  - [网络文章处理](0001_06_web_article_processing.md)：网络文章处理指南
+  - [LLM 处理](0001_03_llm_processing.md)：大语言模型处理指南
+  - [Skill 提取](0001_04_skill_extraction.md)：技能信息提取操作指南
 
-### 3.2 Skill 创建指南
-- `0002_skill_creation_guide.md` - Skill 创建指南
-  - `0002_01_logical_structure.md` - 逻辑层级结构
-  - `0002_02_document_length.md` - 文档长度规范
+### 🛠️ 技能创建
+- [Skill 创建指南](0002_skill_creation_guide.md)：创建高质量 Skill 文档的指南
+  - [逻辑层级结构](0002_01_logical_structure.md)：Skill 文档的逻辑结构设计
+  - [文档长度规范](0002_02_document_length.md)：Skill 文档的长度和格式规范
 
-## 4. 文档原则
+## 使用流程
 
-### 4.1 结构原则
-- **分层设计**：采用三层结构（主题 → 功能模块 → 详细说明）
-- **单一职责**：每个文档专注于一个特定主题
-- **逻辑递进**：从宏观到微观，从基础到高级
+### 从 PDF 文档创建 Skill
+1. **环境准备**：按照环境设置指南配置必要的软件和依赖
+2. **PDF 转换**：将您的论文或专利 PDF 转换为文本格式
+3. **LLM 处理**：使用大语言模型处理转换后的文档
+4. **Skill 提取**：从处理后的文档中提取结构化的技能信息
+5. **文档生成**：查看生成的 Markdown 文档并进行必要的调整
 
-### 4.2 长度原则
-- **主题文档**：50-100行，最大150行
-- **功能模块文档**：100-200行，最大250行
-- **详细说明文档**：150-250行，最大300行
+### 从 GitHub 仓库创建 Skill
+1. **环境准备**：按照环境设置指南配置必要的软件和依赖
+2. **GitHub 仓库处理**：克隆并分析 GitHub 仓库，提取关键信息
+3. **LLM 处理**：使用大语言模型处理提取的仓库信息
+4. **Skill 提取**：从处理后的信息中提取结构化的技能知识
+5. **文档生成**：查看生成的 Markdown 文档并进行必要的调整
 
-### 4.3 扩展性原则
-- **模块化设计**：支持出版社和期刊的无限扩展
-- **引用完整**：文档间建立清晰的引用关系
-- **规范化处理**：为每个出版社和期刊创建专门的处理指南
+### 从 HTML 文件创建 Skill
+1. **环境准备**：按照环境设置指南配置必要的软件和依赖
+2. **HTML 处理**：准备本地保存的 HTML 文件，按照平台/账号/文章的目录结构组织
+3. **LLM 处理**：使用大语言模型处理 HTML 文件内容
+4. **Skill 提取**：从处理后的内容中提取结构化的技能知识
+5. **文档生成**：查看生成的 Markdown 文档并进行必要的调整
 
-## 5. 项目定位
+### 从网络文章创建 Skill
+1. **环境准备**：按照环境设置指南配置必要的软件和依赖
+2. **网络文章处理**：爬取并处理网络文章，提取关键内容
+3. **LLM 处理**：使用大语言模型处理提取的文章内容
+4. **Skill 提取**：从处理后的内容中提取结构化的技能知识
+5. **文档生成**：查看生成的 Markdown 文档并进行必要的调整
 
-Paper2Skill 工具套件旨在通过标准化流程，将学术论文转换为结构化的知识体系，支持科研工作者快速提取和应用论文中的关键知识点和技能点。
+## 技术要求
+
+- **操作系统**：Windows 10/11 或 WSL2 (Ubuntu)
+- **Python 版本**：3.8 或更高版本
+- **依赖项**：详见 `requirements.txt` 文件
+- **硬件要求**：建议至少 8GB RAM，推荐 16GB 或更高
+
+## 故障排除
+
+如果您在使用过程中遇到问题，请参考以下资源：
+
+- **常见问题**：查看本指南中的相关章节
+- **错误信息**：仔细阅读错误提示，尝试按照提示解决问题
+- **环境检查**：确保所有依赖项都已正确安装
+
+## 联系与支持
+
+如有任何疑问或建议，请通过以下方式联系我们：
+
+- **项目主页**：[Mioucat-Workshop-Paper2Skill](https://github.com/Snowarker/Mioucat-Workshop-Paper2Skill)
+- **问题反馈**：在 GitHub 仓库中提交 Issue
+
+祝您使用愉快！
