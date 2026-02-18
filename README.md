@@ -17,7 +17,6 @@
 本项目提供以下核心 Python 脚本：
 
 - **process_pdf.py**：处理 PDF 文档，提取文字内容和图片，生成对应的 Markdown 文档和图片文件夹。
-- **process_html.py**：处理 HTML 网页文件，提取内容并转换为结构化 Markdown。
 - **analyze_pdf_images.py**：分析 PDF 文档中的图片信息，用于调试和问题排查。
 - **check_gpu_pytorch.py**：检查设备是否有 GPU 可用，验证 PyTorch 配置。
 
@@ -67,7 +66,6 @@
 
 7. **scripts/**：存放项目脚本工具
    - **process_pdf.py**：处理PDF文档，提取文字和图片
-   - **process_html.py**：处理HTML网页文件，提取内容并转换为Markdown
    - **analyze_pdf_images.py**：分析PDF中的图片信息，用于调试
    - **check_gpu_pytorch.py**：检查GPU可用性，验证PyTorch配置
 
