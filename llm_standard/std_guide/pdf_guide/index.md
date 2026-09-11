@@ -4,7 +4,7 @@
 
 本索引包含所有 PDF 文档处理规则的目录，按照六位数编号顺序排列。这些规则文档用于指导从原始 PDF 文档转换为规范化 Markdown 文档的过程，包括章节拆分、图片处理和入口文档撰写等标准。
 
-详细的处理流程、目录结构规范和命名规则请参考主技能文档：[资源规范化处理](../.trae/skills/mioucat_workshop-paper_2_skill/04_resource_normalization.md)
+详细的处理流程、目录结构规范和命名规则请参考主技能文档：[资源规范化处理](../../../.trae/skills/mioucat_workshop-paper_2_skill/04_resource_normalization/04_resource_normalization.md)
 
 ## 规则文档列表
 
