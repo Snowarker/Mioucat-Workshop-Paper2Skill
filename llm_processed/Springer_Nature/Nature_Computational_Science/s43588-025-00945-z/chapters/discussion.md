@@ -1,0 +1,9 @@
+# Discussion
+
+## Rethinking Model Complexity vs. Biological Structure
+
+Our results challenge the view that increasing model complexity is the primary route to improved cell-type annotation at atlas scale. Instead, we demonstrate that aligning the training objective with biological structure—through an HCE loss—consistently improves generalization across model classes, from linear classifiers to transformers. Critically, our findings suggest a strategy for building more effective training sets: rather than simply adding data, efforts should prioritize studies that increase connectivity among annotated cell types, especially in sparsely represented regions, thereby amplifying the generalization capabilities of learning architectures.
+
+While the hierarchical objective recovers roughly half of the OOD performance drop, some decrease in accuracy is expected due to imperfect annotation agreement across studies. Understanding the downstream impacts of these inconsistencies and correcting them will be essential as atlas-level resources become more standardized and begin to power the next generation of AI-driven discoveries in biology. It is important to note that HCE relies on a predefined, labeled DAG, and while the cell ontology serves as a valuable reference it is continuously evolving, with ongoing updates to cell-type definitions and their hierarchical relationships.
+
+Furthermore, while this study centers on cell-type classification, the hierarchical loss generalizes to any setting with structured label spaces, offering a simple drop-in replacement for standard CE that brings domain knowledge into model training. This points to a broader opportunity to incorporate biological priors into learning objectives, an increasingly important consideration as models are trained on ever-growing single-cell atlases[19]–[21].

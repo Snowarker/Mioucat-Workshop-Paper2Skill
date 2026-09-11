@@ -1,0 +1,73 @@
+# ============================================================
+# Mioucat-Workshop-Paper2Skill .gitignore
+# 上传内容 = 方法 / 原则 / 工具脚本；排除 = 环境 / 模型 / 处理产物
+# ============================================================
+
+# ---- 虚拟环境与 Python 缓存 ----
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ---- 模型与推理工具（大文件，首次运行时自动下载/解压） ----
+models/*
+!models/.gitkeep
+tools/*
+!tools/.gitkeep
+
+# ---- 文献数据与处理产物（只保留目录结构占位 + 示例案例） ----
+pdf/*
+!pdf/.gitkeep
+!pdf/input/
+!pdf/output/
+pdf/input/*
+!pdf/input/.gitkeep
+!pdf/input/project_test/
+pdf/input/project_test/*
+!pdf/input/project_test/*.pdf
+pdf/output/*
+!pdf/output/.gitkeep
+llm_processed/*
+!llm_processed/.gitkeep
+!llm_processed/Springer_Nature/
+llm_processed/Springer_Nature/*
+!llm_processed/Springer_Nature/Nature_Computational_Science/
+llm_processed/Springer_Nature/Nature_Computational_Science/*
+!llm_processed/Springer_Nature/Nature_Computational_Science/s43588-025-00945-z/
+paper_skills/*
+!paper_skills/.gitkeep
+!paper_skills/by_journal/
+!paper_skills/by_method/
+!paper_skills/by_topic/
+paper_skills/by_journal/*
+!paper_skills/by_journal/.gitkeep
+paper_skills/by_method/*
+!paper_skills/by_method/.gitkeep
+paper_skills/by_topic/*
+!paper_skills/by_topic/.gitkeep
+
+# ---- 本地规则与未上传 skill（不上传，保留本地使用） ----
+.trae/rules/
+.trae/skills/voice-input-optimization/
+.trae/skills/mioucat_workshop-skill_dev_manager/
+
+# ---- 本地工作文件（不公开） ----
+.obsidian/
+docs/*
+!docs/.gitkeep
+!docs/images/
+!docs/images/wechat_qrcode.png
+!docs/work_logs/
+docs/work_logs/*
+!docs/work_logs/.gitkeep
+source/*
+!source/.gitkeep
+html/*
+!html/.gitkeep
+requirements_backup_*.txt
+
+# ---- 操作系统 / 编辑器 ----
+Thumbs.db
+Desktop.ini
+.DS_Store

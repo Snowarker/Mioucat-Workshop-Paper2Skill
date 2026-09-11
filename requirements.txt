@@ -1,0 +1,12 @@
+# Project Dependencies
+
+# Marker - PDF processing tool
+# Install from PyPI (2.x uses a VLM inference server, see skill docs for GPU setup)
+marker-pdf==2.0.0
+
+# PyMuPDF - PDF analysis tool
+# Used for analyzing image types in PDF files
+PyMuPDF==1.28.2
+
+# PyTorch - install the CUDA build separately (not from PyPI default):
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
